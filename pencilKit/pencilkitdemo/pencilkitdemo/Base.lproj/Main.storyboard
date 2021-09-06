@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l5Z-pC-tlG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pencilkitdemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fu-J8-vd9" customClass="PKCanvasView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3fu-J8-vd9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9py-Mr-2dg"/>
+                            <constraint firstItem="3fu-J8-vd9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PtM-Pq-feQ"/>
+                            <constraint firstAttribute="bottom" secondItem="3fu-J8-vd9" secondAttribute="bottom" id="tWl-Ve-4DB"/>
+                            <constraint firstAttribute="trailing" secondItem="3fu-J8-vd9" secondAttribute="trailing" id="zFy-W9-GFS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mHn-Mm-l2K">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Undo" id="h1l-HN-8n0">
+                                <connections>
+                                    <action selector="undo:" destination="dkx-z0-nzr" id="Ruv-Lg-OPf"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Redo" id="ulo-tY-3NQ">
+                                <connections>
+                                    <action selector="redo:" destination="dkx-z0-nzr" id="lyE-Vq-o7z"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Clear" id="rkT-V3-lsS">
+                                <connections>
+                                    <action selector="clearBtnTapped:" destination="BYZ-38-t0r" id="hgB-FQ-nw1"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Image" id="URZ-en-8Zl">
+                                <connections>
+                                    <action selector="imageBtnTapped:" destination="BYZ-38-t0r" id="xos-qS-QXm"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="canvasView" destination="3fu-J8-vd9" id="Lzb-Rf-H9O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357.9710144927537" y="88.392857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="apx-wO-RFu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l5Z-pC-tlG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R59-dm-ozT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cWr-kn-vTe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOG-eV-LHG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447.82608695652175" y="87.723214285714278"/>
+        </scene>
+        <!--Image View View Controller-->
+        <scene sceneID="9Yo-2v-A8G">
+            <objects>
+                <viewController storyboardIdentifier="image" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yq6-hH-Wsk" customClass="ImageView_ViewController" customModule="pencilkitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ful-ka-OLK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="per-CD-pG7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e8d-de-PEu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="per-CD-pG7" secondAttribute="trailing" id="0cl-CK-hFa"/>
+                            <constraint firstItem="per-CD-pG7" firstAttribute="leading" secondItem="ful-ka-OLK" secondAttribute="leading" id="T6G-TK-ono"/>
+                            <constraint firstItem="per-CD-pG7" firstAttribute="top" secondItem="ful-ka-OLK" secondAttribute="top" id="ZXs-Gd-0Jb"/>
+                            <constraint firstAttribute="bottom" secondItem="per-CD-pG7" secondAttribute="bottom" id="ysa-uN-zq0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="per-CD-pG7" id="vM8-5e-rXT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OWH-q5-10z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2201" y="62"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
